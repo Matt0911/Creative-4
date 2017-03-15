@@ -7,7 +7,8 @@ router.get('/', function(req, res, next) {
   res.render('index', { title: 'Express' });
 });
 
-router.get('/sayHello', function (req, res) {
+router.post('/sayHello', function (req, res) {
+  console.log(req);
   var options = {
     auth: {
       api_user: 'creative4email',
