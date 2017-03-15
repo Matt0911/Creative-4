@@ -1,5 +1,6 @@
 var express = require('express');
 var nodemailer = require('nodemailer');
+var sgTransport = require('nodemailer-sendgrid-transport');
 var router = express.Router();
 
 /* GET home page. */
@@ -8,14 +9,14 @@ router.get('/', function(req, res, next) {
 });
 
 router.get('/sayHello', function (req, res) {
+  var options = {
+    auth: {
+      api_user: 'creative4email',
+      api_key: 'creative4'
+    }
+  }
     // Not the movie transporter!
-    var transporter = nodemailer.createTransport({
-        service: 'Gmail',
-        auth: {
-            user: 'creative4email@gmail.com', // Your email id
-            pass: 'creative4' // Your password
-        }
-    });
+    var transporter = nodemailer.createTransport(sgTransport(options));
 
     var text = 'Hello from \n\n';
 
