@@ -27,8 +27,8 @@ router.get('/sayHello', function (req, res) {
     var text = 'Hello from \n\n';
 
     var mailOptions = {
-      from: 'mattmanhardt@gmail.com', // sender address
-      to: 'matt0911@byu.edu', // list of receivers
+      from: 'mattman0911@byu.edu', // sender address
+      to: 'mattmanhardt@gmail.com', // list of receivers
       subject: 'Email Example', // Subject line
       text: text //, // plaintext body
       // html: '<b>Hello world ✔</b>' // You can choose to send an HTML body instead
