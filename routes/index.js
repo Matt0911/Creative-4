@@ -36,6 +36,6 @@ router.get('/sayHello', function (req, res) {
           res.json({yo: info.response});
       };
     });
-}
+});
 
 module.exports = router;
