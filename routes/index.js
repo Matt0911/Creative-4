@@ -9,14 +9,20 @@ router.get('/', function(req, res, next) {
 });
 
 router.get('/sayHello', function (req, res) {
-  var options = {
-    auth: {
-      api_user: 'creative4email',
-      api_key: 'creative4'
+    var options = {
+      auth: {
+        api_user: 'creative4email',
+        api_key: 'creative4'
+      }
     }
-  }
     // Not the movie transporter!
-    var transporter = nodemailer.createTransport(sgTransport(options));
+    var transporter = nodemailer.createTransport({
+      service: 'SendGrid',
+      auth: {
+        user: 'creative4email',
+        pass: 'creative4'
+      }
+    });
 
     var text = 'Hello from \n\n';
 
