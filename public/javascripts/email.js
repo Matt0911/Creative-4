@@ -19,11 +19,11 @@ function clearFunction ()
 function sendFunction ()
 {
 	console.log('in send function');
-	var sender = document.getElementById ("from");
-	var receiver = document.getElementById ("to");
+	var sender = document.getElementById ("from").value;
+	var receiver = document.getElementById ("to").value;
 
-	var subject = document.getElementById ("subject");
-	var message = document.getElementById ("message");
+	var subject = document.getElementById ("subject").value;
+	var message = document.getElementById ("message").value;
 
 
 	var json = {sender:sender, receiver:receiver, subject:subject, message:message};
