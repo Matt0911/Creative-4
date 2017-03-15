@@ -29,7 +29,7 @@ function sendFunction ()
 	var json = {sender:sender, receiver:receiver, subject:subject, message:message};
 
 
-	var posting = $.post ("/sayHello", json);
+	var posting = $.post("/sayHello", JSON.stringify(json));
 
 	posting.done (function (data) {
 		alert ("Email Successful");
