@@ -32,7 +32,7 @@ function sendFunction ()
 	var posting = $.post("/sayHello", json);
 
 	posting.done (function (data) {
-		alert ("Email Successful");
+		alert (data);
 	});
 
 }

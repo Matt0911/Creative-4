@@ -36,22 +36,23 @@ router.post('/sayHello', function (req, res) {
     var text = 'Hello from \n\n';
 
     var mailOptions = {
-      from: 'mattmanhardt@gmail.com', // sender address
-      to: 'matt0911@byu.edu', // list of receivers
-      subject: 'Email Example', // Subject line
-      text: text //, // plaintext body
+      from: req.body.sender, // sender address
+      to: req.body.receiver, // list of receivers
+      subject: req.body.subject, // Subject line
+      text: req.body.message //, // plaintext body
       // html: '<b>Hello world ✔</b>' // You can choose to send an HTML body instead
     };
 
     transporter.sendMail(mailOptions, function(error, info){
       if(error){
           console.log(error);
+          res.send("There was an error");
       }else{
           console.log('Message sent: ' + info.response);
+          res.send("Email was sent!");
       };
     });
 
-    res.send("Email was sent!");
 });
 
 module.exports = router;
