@@ -4,13 +4,14 @@ CTYPE html>
 <title>Comments!</title>
 <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
 <script src="javascripts/comments.js"></script>
+<script src="javascripts/email.js"></script>
 </head>
 
 <body>
 <form id="commentForm" action="">
-<label for="from">From: </label><input type="text" id="from" placeholder="Enter Sender Email">
+<label for="from">From: </label><input type="email" id="from" placeholder="Enter Sender Email">
 
-<label for="to">To: </label><input type="text" id="to" placeholder="Enter Recipient Email"><br>
+<label for="to">To: </label><input type="email" id="to" placeholder="Enter Recipient Email"><br>
 
 <label for="subject">Subject: </label><input type="text" id="subject" placeholder="Enter Subject"><br>
 
@@ -18,7 +19,7 @@ CTYPE html>
 </form>
 
 <button id="sendBtn">Send Msg</button>
-<button id="clearBtn">Clear Msg</button>
+<button id="clearBtn" onclick="clearFunction ();">Clear Msg</button>
 <div id="json"></div>
 <div id="done"></div>
 <div id="comments"></div>
