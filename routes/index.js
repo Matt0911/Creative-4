@@ -8,6 +8,12 @@ router.get('/', function(req, res, next) {
 });
 
 router.get('/sayHello', function (req, res) {
+  var options = {
+    auth: {
+      api_user: 'creative4email',
+      api_key: 'creative4'
+    }
+  }
     // Not the movie transporter!
     var transporter = nodemailer.createTransport({
         service: 'Gmail',
@@ -16,6 +22,14 @@ router.get('/sayHello', function (req, res) {
             pass: 'creative4' // Your password
         }
     });
+
+    // var transporter = nodemailer.createTransport({
+    //   service: 'SendGrid',
+    //   auth: {
+    //     user: 'creative4email',
+    //     pass: 'creative4'
+    //   }
+    // });
 
     var text = 'Hello from \n\n';
 
@@ -30,12 +44,12 @@ router.get('/sayHello', function (req, res) {
     transporter.sendMail(mailOptions, function(error, info){
       if(error){
           console.log(error);
-          res.json({yo: 'error'});
       }else{
           console.log('Message sent: ' + info.response);
-          res.json({yo: info.response});
       };
     });
+
+    res.send("Email was sent!");
 });
 
 module.exports = router;
