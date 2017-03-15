@@ -7,8 +7,7 @@ router.get('/', function(req, res, next) {
   res.render('index', { title: 'Express' });
 });
 
-app.use('/sayHello', router);
-router.post('/', handleSayHello); // handle the route at yourdomain.com/sayHello
+router.post('/sayHello', handleSayHello); // handle the route at yourdomain.com/sayHello
 
 function handleSayHello(req, res) {
     // Not the movie transporter!
