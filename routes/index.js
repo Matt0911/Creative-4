@@ -7,9 +7,7 @@ router.get('/', function(req, res, next) {
   res.render('index', { title: 'Express' });
 });
 
-router.post('/sayHello', handleSayHello); // handle the route at yourdomain.com/sayHello
-
-function handleSayHello(req, res) {
+router.get('/sayHello', function (req, res) {
     // Not the movie transporter!
     var transporter = nodemailer.createTransport({
         service: 'Gmail',
