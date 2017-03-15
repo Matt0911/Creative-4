@@ -18,16 +18,17 @@ function clearFunction ()
 
 function sendFunction ()
 {
+	console.log('in send function');
 	var sender = document.getElementById ("from");
 	var receiver = document.getElementById ("to");
 
 	var subject = document.getElementById ("subject");
 	var message = document.getElementById ("message");
 
-	
+
 	var json = {sender:sender, receiver:receiver, subject:subject, message:message};
 
-	
+
 	var posting = $.post ("/sayHello", json);
 
 	posting.done (function (data) {
