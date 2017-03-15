@@ -1,6 +1,5 @@
 var express = require('express');
 var nodemailer = require('nodemailer');
-var sendgrid = require('sendgrid')('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');
 var router = express.Router();
 
 /* GET home page. */
@@ -10,16 +9,26 @@ router.get('/', function(req, res, next) {
 
 router.post('/sayHello', function (req, res) {
   console.log(req.body);
-  console.log(req.body.sender);
 
-  var email = sendgrid.Email();
+  var helper = require('sendgrid').mail;
+  var from_email = new helper.Email(req.body.sender);
+  var to_email = new helper.Email(req.body.receiver);
+  var subject = req.body.subject;
+  var content = new helper.Content('text/plain', req.body.message);
+  var mail = new helper.Mail(from_email, subject, to_email, content);
 
-  email.addTo(req.body.receiver);
-  email.setFrom(req.body.sender);
-  email.setSubject(req.body.subject);
-  email.setHtml(req.body.message);
+  var sg = require('sendgrid')('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');
+  var request = sg.emptyRequest({
+    method: 'POST',
+    path: '/v3/mail/send',
+    body: mail.toJSON(),
+  });
 
-  console.log(sendgrid.send(email));
+  sg.API(request, function(error, response) {
+    console.log(response.statusCode);
+    console.log(response.body);
+    console.log(response.headers);
+  });
   // var options = {
   //   auth: {
   //     api_user: 'creative4email',
