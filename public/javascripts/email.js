@@ -3,13 +3,13 @@ function clearFunction ()
 	alert ("Entered email.js clearFunction");
 
 
-	var sender = document.getElementById ("from");
+	//var sender = document.getElementById ("from");
 	var receiver = document.getElementById ("to");
 
 	var subject = document.getElementById ("subject");
 	var message = document.getElementById ("message");
 
-	sender.value = "";
+	//sender.value = "";
 	receiver.value = "";
 	subject.value = "";
 	message.value = "";
@@ -19,14 +19,14 @@ function clearFunction ()
 function sendFunction ()
 {
 	console.log('in send function');
-	var sender = document.getElementById ("from").value;
+	//var sender = document.getElementById ("from").value;
 	var receiver = document.getElementById ("to").value;
 
 	var subject = document.getElementById ("subject").value;
 	var message = document.getElementById ("message").value;
 
 
-	var json = {sender:sender, receiver:receiver, subject:subject, message:message};
+	var json = {receiver:receiver, subject:subject, message:message};
 	console.log(json);
 
 	var posting = $.post("/sayHello", json);
