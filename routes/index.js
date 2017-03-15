@@ -8,7 +8,7 @@ router.get('/', function(req, res, next) {
 });
 
 router.post('/sayHello', function (req, res) {
-  console.log(req);
+  console.log(req.body);
   var options = {
     auth: {
       api_user: 'creative4email',

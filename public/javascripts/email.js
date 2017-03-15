@@ -27,7 +27,7 @@ function sendFunction ()
 
 
 	var json = {sender:sender, receiver:receiver, subject:subject, message:message};
-
+	console.log(json);
 
 	var posting = $.post("/sayHello", JSON.stringify(json));
 
