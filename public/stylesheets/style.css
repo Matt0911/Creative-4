@@ -1,8 +1,58 @@
-body {
-  padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+* {
+  font-family: 'Open Sans', sans-serif;
+  text-align: center;
 }
 
-a {
-  color: #00B7FF;
+h1{
+  font-family: 'PT Serif', serif;
+  font-family: 'Pacifico', cursive;
+}
+
+body,html {
+    height: 100%
+}
+
+.bgimg {
+    background-image: url('http://www.designlovefest.com/wp-content/uploads/downloads/2017/02/designlovefest2.jpg');
+    min-height: 63%;
+    background-position: center;
+    background-size: cover;
+}
+
+.heading{
+  min-height:17%;
+  background-position: center;
+  background-size: cover;
+}
+
+.bar{
+  min-height: 9%;
+  background-color: #e0bca1
+}
+
+.text{
+  font-family: 'Open Sans', sans-serif;
+  position: inherit;
+}
+
+input {
+    font-family: 'Open Sans', sans-serif;
+    width: 50%;
+}
+
+textarea{
+  font-family: 'Open Sans', sans-serif;
+  width: 50%;
+  height: 170px;
+}
+
+button {
+  margin-left:7px;
+  margin-right: 7px;
+  background-color: #f3f3f3;
+  border: 1.5px solid #b0b0b0;
+  color: black;
+  padding: 2px 20px;
+  border-radius: 4px;
+
 }
