@@ -4,21 +4,36 @@
 <title>Email Sender</title>
 <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
 <script src="javascripts/email.js"></script>
+<link href="https://netdna.bootstrapcdn.com/twitter-bootstrap/2.1.1/css/bootstrap.min.css" rel="stylesheet">
+<link rel="stylesheet" href="stylesheets/style.css">
+<link href="https://fonts.googleapis.com/css?family=Open+Sans|PT+Serif|Pacifico" rel="stylesheet">
 </head>
 
 <body>
-<form id="commentForm" action="">
-<!-- <label for="from">From: </label><input type="email" id="from" placeholder="Enter Sender Email"> -->
+<div class = "heading">
+ </br>
+    <h1> electronic mail®</h1>
+    <p>faster than letters</p>
+</div>
+<div class = "bar"></div>
+  
+    <div class="bgimg">
+      <div class = "text">
+        <form id="commentForm" action="">
+        </br>
+          <label for="to">to: </label>
+          <input type="email" id="to" placeholder="enter recipient email">
+          <label for="subject">subject: </label>
+          <input type="text" id="subject" placeholder="enter subject"><br>
+          <label for="message">message: </label>
+          <textarea type="text" id="message" placeholder="enter message"></textarea><br>
+        </form>
+      </div>
+    </div>
 
-<label for="to">To: </label><input type="email" id="to" placeholder="Enter Recipient Email"><br>
+<button id="clearBtn" onclick="clearFunction();">clear</button>
+<button id="sendBtn" onclick="sendFunction();">send</button>
 
-<label for="subject">Subject: </label><input type="text" id="subject" placeholder="Enter Subject"><br>
-
-<label for="message">Message: </label><textarea type="text" id="message" placeholder="Enter Message"></textarea><br>
-</form>
-
-<button id="sendBtn" onclick="sendFunction();">Send Msg</button>
-<button id="clearBtn" onclick="clearFunction();">Clear Msg</button>
 <div id="json"></div>
 <div id="done"></div>
 <div id="comments"></div>
