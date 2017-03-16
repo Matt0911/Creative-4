@@ -1,6 +1,6 @@
 function clearFunction ()
 {
-	alert ("Entered email.js clearFunction");
+//	alert ("Entered email.js clearFunction");
 
 
 	//var sender = document.getElementById ("from");

@@ -14,6 +14,8 @@
     "express": "~4.13.1",
     "mongoose": "^4.4.3",
     "morgan": "~1.6.1",
+    "nodemailer": "^3.1.7",
+    "sendgrid": "^4.8.2",
     "serve-favicon": "~2.3.0"
   }
 }
